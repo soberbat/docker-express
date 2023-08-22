@@ -9,3 +9,16 @@ services:
       - /app/node_modules
     environment:
       - PORT=3000
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=berbo
+      - MONGO_INITDB_ROOT_PASSWORD=myyPass
+    volumes:
+      - mongodb:/data/db
+
+  redis:
+    image: redis
+
+volumes:
+  mongodb:
